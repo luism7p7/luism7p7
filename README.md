@@ -1,10 +1,10 @@
-# Hola, soy Luis Miguel Muñoz Rendón 👋
+# Hola, soy Luis Miguel Muñoz Rendón 
 
 Estudiante de **Ingeniería de Software** (VII semestre) en la Universidad Cooperativa de Colombia, Medellín.
 Me interesa el desarrollo back-end con **Java** y la integración con el front-end usando HTML, CSS y JavaScript.
 Actualmente estoy aprendiendo **Spring Boot** y **Maven**, y busco **prácticas profesionales**.
 
-## 🛠️ Tecnologías
+##  Tecnologías
 
 **Lenguajes:** Java · JavaScript · Dart · C++  
 **Web:** HTML · CSS · JavaScript  
@@ -13,7 +13,7 @@ Actualmente estoy aprendiendo **Spring Boot** y **Maven**, y busco **prácticas 
 **En aprendizaje:** Spring Boot · Maven  
 **Metodologías:** Scrum (nociones básicas)
 
-## 🚀 Proyectos destacados
+##  Proyectos destacados
 
 | Proyecto | Descripción | Tecnologías |
 |---|---|---|
@@ -22,7 +22,7 @@ Actualmente estoy aprendiendo **Spring Boot** y **Maven**, y busco **prácticas 
 | [BlackJack](https://github.com/luism7p7/BlackJack) | Página web de casino con juego de BlackJack, banco, modo contra la máquina y multijugador. | JavaScript |
 | [Sistema de Gestión de Tareas Académicas](https://github.com/luism7p7/sistema-gestion-tareas-academicas) | Aplicación para organizar tareas académicas. | Java |
 
-## 📫 Contacto
+##  Contacto
 
 - Correo: munozrendonluismiguel@gmail.com
 - Ubicación: Medellín, Antioquia, Colombia
