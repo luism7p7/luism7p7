@@ -26,7 +26,7 @@ Busco mi **práctica profesional** desde **enero de 2027**, presencial, híbrida
 | **Casa Rendón** | Sitio web de una marca de café de altura y vino artesanal de Andes, Antioquia | Desarrollo en equipo | [Sitio en línea](https://casarendon.com) · [Código](https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon) |
 | **Numi** | App Android educativa para niños de zonas rurales, funciona sin internet y tiene 49 actividades y un asistente de IA | Equipo de ingeniería | [Código](https://github.com/geminitodo5-sketch/app-educativa-medellin) |
 | **BlackJack Royale** | Casino web con modo contra la máquina, multijugador en tiempo real y banco de fichas | Individual | [Jugar](https://luism7p7.github.io/BlackJack/Casino/public/) · [Código](https://github.com/luism7p7/BlackJack) |
-| **GlampingHub** | Plataforma para buscar y reservar glampings, cabañas y fincas en Colombia | Individual | [Video en el portafolio](https://luism7p7.github.io/#glampinghub) |
+| **GlampingHub** | Plataforma para reservar glampings, cabañas y fincas, con servidor en Java y Spring Boot y base de datos MySQL | Individual | [Video](https://luism7p7.github.io/#glampinghub) · [Código](https://github.com/luism7p7/PROYECTO_GESTION_DE_RESERVAS) |
 | **Árbol de regresión con Iris** | Modelo de machine learning con error promedio de 0,24 cm y R² de 0,97 | Analítica de Datos | [Ver análisis](https://luism7p7.github.io/#datos) |
 
 Mira los videos de cada proyecto en **[luism7p7.github.io](https://luism7p7.github.io)**.
@@ -34,11 +34,11 @@ Mira los videos de cada proyecto en **[luism7p7.github.io](https://luism7p7.gith
 ## Herramientas
 
 <p>
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,python,flutter,dart,java,mysql,sqlite,firebase,git,github&theme=dark" alt="Herramientas" />
+  <img src="https://skillicons.dev/icons?i=java,spring,html,css,js,react,python,flutter,dart,mysql,sqlite,firebase,git,github&theme=dark" alt="Herramientas" />
 </p>
 
-**Aprendiendo ahora:** AWS · Java con Spring Boot · Maven
-**Lo siguiente:** Power BI · Docker
+**Aprendiendo ahora:** AWS · Power BI
+**Lo siguiente:** Docker · JUnit
 
 ## Actividad
 
