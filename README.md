@@ -1,42 +1,48 @@
-<a href="https://luism7p7.github.io"><picture><source media="(max-width: 700px)" srcset="assets/m-hero.svg"><img src="assets/hero.svg" width="100%" alt="Luis Miguel Muñoz Rendón. Estudiante de Ingeniería de Software en Medellín. Disponible para práctica desde enero de 2027."></picture></a>
+<picture><source media="(max-width: 700px)" srcset="assets/dev/m-ide.svg"><img src="assets/dev/ide.svg" width="100%" alt="LuisMiguel.java abierto en IntelliJ: estudiante de Ingeniería de Software en Medellín, disponible para práctica desde enero de 2027."></picture>
 
 <p>
-  <a href="https://luism7p7.github.io"><img src="assets/btn-portafolio.svg" height="44" alt="Ver portafolio"></a>
-  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/btn-cv.svg" height="44" alt="Hoja de vida en PDF"></a>
-  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/btn-linkedin.svg" height="44" alt="LinkedIn"></a>
-  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/btn-correo.svg" height="44" alt="Escríbeme"></a>
+  <a href="https://luism7p7.github.io"><img src="assets/dev/cmd-portafolio.svg" height="40" alt="open portafolio"></a>
+  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/dev/cmd-hoja-de-vida.svg" height="40" alt="curl -O hoja_de_vida.pdf"></a>
+  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/dev/cmd-linkedin.svg" height="40" alt="open linkedin"></a>
+  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/dev/cmd-luis.svg" height="40" alt="mail luis"></a>
 </p>
 
-Antes de programar administré un negocio: atendí clientes, negocié con proveedores y llevé el inventario. Hoy uso esa experiencia para construir software pensando en la persona que lo va a usar. Busco mi **práctica profesional desde enero de 2027**, presencial, híbrida o remota.
+Estudiante de Ingeniería de Software (VII semestre) en Medellín. Construyo back-end con **Java y Spring Boot**, web con **React**, apps con **Flutter** y análisis con **Python**. Busco práctica profesional desde **enero de 2027**.
 
-## Proyectos
+## `~/stack`
 
-<a href="https://luism7p7.github.io/#casarendon"><picture><source media="(max-width: 700px)" srcset="assets/m-casarendon.svg"><img src="assets/casarendon.svg" width="100%" alt="Casa Rendón: sitio web de una marca familiar de café y vino artesanal, en línea en casarendon.com"></picture></a>
+<picture><source media="(max-width: 700px)" srcset="assets/dev/m-neofetch.svg"><img src="assets/dev/neofetch.svg" width="100%" alt="neofetch: Java, Spring Boot, Spring Data JPA, Maven, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, MySQL, SQLite, Firebase, Git. Aprendiendo AWS y Power BI; lo siguiente, Docker y JUnit."></picture>
 
-**[Visitar casarendon.com](https://casarendon.com)** · [Ver el video y los detalles](https://luism7p7.github.io/#casarendon) · [Código](https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon)
+## `~/proyectos`
 
-<a href="https://luism7p7.github.io/#numi"><picture><source media="(max-width: 700px)" srcset="assets/m-numi.svg"><img src="assets/numi.svg" width="100%" alt="Numi: app Android educativa para niños de zonas rurales que funciona sin internet"></picture></a>
+<picture><source media="(max-width: 700px)" srcset="assets/dev/m-gitlog.svg"><img src="assets/dev/gitlog.svg" width="100%" alt="git log con los proyectos: análisis Iris, Casa Rendón en producción, Numi, BlackJack Royale y GlampingHub."></picture>
 
-**[Ver el video y los detalles](https://luism7p7.github.io/#numi)** · [Código](https://github.com/geminitodo5-sketch/app-educativa-medellin) · [Paneles por rol](https://github.com/luism7p7/numi-paneles-roles)
+<p>
+  <a href="https://casarendon.com"><img src="assets/dev/p-casarendon.svg" width="49%" alt="Casa Rendón en producción"></a>
+  <a href="https://luism7p7.github.io/#numi"><img src="assets/dev/p-numi.svg" width="49%" alt="Numi en Android"></a>
+  <a href="https://luism7p7.github.io/BlackJack/Casino/public/"><img src="assets/dev/p-blackjack.svg" width="49%" alt="BlackJack Royale en GitHub Pages"></a>
+  <a href="https://github.com/luism7p7/glampinghub"><img src="assets/dev/p-glampinghub.svg" width="49%" alt="GlampingHub en localhost:8080"></a>
+</p>
 
-<a href="https://luism7p7.github.io/BlackJack/Casino/public/"><picture><source media="(max-width: 700px)" srcset="assets/m-blackjack.svg"><img src="assets/blackjack.svg" width="100%" alt="BlackJack Royale: casino en el navegador con multijugador y banco de fichas"></picture></a>
+| proyecto | stack | demo | código |
+|---|---|---|---|
+| **Casa Rendón** · sitio de café y vino artesanal (equipo) | React · HTML · CSS | [casarendon.com](https://casarendon.com) | [repo](https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon) |
+| **Numi** · app educativa offline para niños rurales (equipo de ingeniería) | Flutter · Dart · SQLite · Firebase | [video](https://luism7p7.github.io/#numi) | [repo](https://github.com/geminitodo5-sketch/app-educativa-medellin) · [paneles](https://github.com/luism7p7/numi-paneles-roles) |
+| **BlackJack Royale** · casino web multijugador | JavaScript · Python | [jugar](https://luism7p7.github.io/BlackJack/Casino/public/) | [repo](https://github.com/luism7p7/BlackJack) |
+| **GlampingHub** · reservas de glampings y fincas | Java · Spring Boot · MySQL | [video](https://luism7p7.github.io/#glampinghub) | [repo](https://github.com/luism7p7/glampinghub) |
 
-**[Jugar en línea](https://luism7p7.github.io/BlackJack/Casino/public/)** · [Ver el video y los detalles](https://luism7p7.github.io/#blackjack) · [Código](https://github.com/luism7p7/BlackJack)
+## `~/datos`
 
-<a href="https://luism7p7.github.io/#glampinghub"><picture><source media="(max-width: 700px)" srcset="assets/m-glampinghub.svg"><img src="assets/glampinghub.svg" width="100%" alt="GlampingHub: plataforma para reservar glampings, cabañas y fincas, con servidor en Java y Spring Boot"></picture></a>
+<a href="https://luism7p7.github.io/#datos"><img src="assets/dev/colab.svg" width="100%" alt="Notebook de Colab: árbol de regresión con Iris, max_depth = 4, MAE de prueba 0,2385 cm y R² 0,9742."></a>
 
-**[Ver el video y los detalles](https://luism7p7.github.io/#glampinghub)** · [Código](https://github.com/luism7p7/glampinghub)
+Celdas y salidas reales del notebook. [Ver el análisis completo](https://luism7p7.github.io/#datos).
 
-## Análisis de datos
+## `git log --since="1 year ago"`
 
-<a href="https://luism7p7.github.io/#datos"><picture><source media="(max-width: 700px)" srcset="assets/m-datos.svg"><img src="assets/datos.svg" width="100%" alt="Árbol de regresión con el conjunto Iris: 2,4 mm de error promedio y 97 % de la variación explicada"></picture></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano.svg">
+  <img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg" width="100%" alt="Un gusano se come mi gráfico de contribuciones del último año">
+</picture>
 
-**[Ver el análisis completo](https://luism7p7.github.io/#datos)**, hecho en Google Colab para la materia de Analítica de Datos.
-
-## Herramientas
-
-<picture><source media="(max-width: 700px)" srcset="assets/m-herramientas.svg"><img src="assets/herramientas.svg" width="100%" alt="Web: HTML, CSS, JavaScript, React. Back-end: Java, Spring Boot, Maven. Móvil: Flutter, Dart. Datos: Python, pandas, scikit-learn, Colab. Bases de datos: MySQL, SQLite, Firebase. Equipo: Git, GitHub, Scrum. Aprendiendo: AWS y Power BI. Lo siguiente: Docker y JUnit."></picture>
-
-<a href="mailto:munozrendonluismiguel@gmail.com"><picture><source media="(max-width: 700px)" srcset="assets/m-contacto.svg"><img src="assets/contacto.svg" width="100%" alt="¿Tienes una práctica? Hablemos. munozrendonluismiguel@gmail.com"></picture></a>
-
-<sub>Read it in English: [luism7p7.github.io/#en](https://luism7p7.github.io/#en)</sub>
+<a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/dev/statusbar.svg" width="100%" alt="Process finished with exit code 0 · Disponible 2027-01 · munozrendonluismiguel@gmail.com"></a>
