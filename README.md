@@ -1,52 +1,42 @@
-<div align="center">
+<a href="https://luism7p7.github.io"><picture><source media="(max-width: 700px)" srcset="assets/m-hero.svg"><img src="assets/hero.svg" width="100%" alt="Luis Miguel Muñoz Rendón. Estudiante de Ingeniería de Software en Medellín. Disponible para práctica desde enero de 2027."></picture></a>
 
-<a href="https://luism7p7.github.io">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=2800&pause=900&color=A8D5BF&center=true&vCenter=true&width=640&lines=Hola%2C+soy+Luis+Miguel+Mu%C3%B1oz+Rend%C3%B3n;Ingenier%C3%ADa+de+Software+%C2%B7+Medell%C3%ADn;Web+%C2%B7+Apps+m%C3%B3viles+%C2%B7+An%C3%A1lisis+de+datos;Disponible+para+pr%C3%A1ctica+desde+enero+de+2027" alt="Hola, soy Luis Miguel Muñoz Rendón" />
-</a>
+<p>
+  <a href="https://luism7p7.github.io"><img src="assets/btn-portafolio.svg" height="44" alt="Ver portafolio"></a>
+  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/btn-cv.svg" height="44" alt="Hoja de vida en PDF"></a>
+  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/btn-linkedin.svg" height="44" alt="LinkedIn"></a>
+  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/btn-correo.svg" height="44" alt="Escríbeme"></a>
+</p>
 
-<br/>
+Antes de programar administré un negocio: atendí clientes, negocié con proveedores y llevé el inventario. Hoy uso esa experiencia para construir software pensando en la persona que lo va a usar. Busco mi **práctica profesional desde enero de 2027**, presencial, híbrida o remota.
 
-<a href="https://luism7p7.github.io"><img src="https://img.shields.io/badge/Portafolio-luism7p7.github.io-A8D5BF?style=for-the-badge&logo=googlechrome&logoColor=0C1110" alt="Portafolio" /></a>
-<a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="https://img.shields.io/badge/Hoja_de_vida-PDF-DCE3DF?style=for-the-badge&logo=readthedocs&logoColor=0C1110" alt="Hoja de vida" /></a>
-<a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="mailto:munozrendonluismiguel@gmail.com"><img src="https://img.shields.io/badge/Correo-Escr%C3%ADbeme-1F5F47?style=for-the-badge&logo=gmail&logoColor=white" alt="Correo" /></a>
+## Proyectos
 
-</div>
+<a href="https://luism7p7.github.io/#casarendon"><picture><source media="(max-width: 700px)" srcset="assets/m-casarendon.svg"><img src="assets/casarendon.svg" width="100%" alt="Casa Rendón: sitio web de una marca familiar de café y vino artesanal, en línea en casarendon.com"></picture></a>
 
----
+**[Visitar casarendon.com](https://casarendon.com)** · [Ver el video y los detalles](https://luism7p7.github.io/#casarendon) · [Código](https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon)
 
-Estudiante de **Ingeniería de Software** (VII semestre) en la Universidad Cooperativa de Colombia, Medellín. Desarrollo **sitios web**, **aplicaciones móviles** y **análisis de datos**. Antes de programar administré un negocio atendiendo clientes, proveedores e inventario.
+<a href="https://luism7p7.github.io/#numi"><picture><source media="(max-width: 700px)" srcset="assets/m-numi.svg"><img src="assets/numi.svg" width="100%" alt="Numi: app Android educativa para niños de zonas rurales que funciona sin internet"></picture></a>
 
-Busco mi **práctica profesional** desde **enero de 2027**, presencial, híbrida o remota.
+**[Ver el video y los detalles](https://luism7p7.github.io/#numi)** · [Código](https://github.com/geminitodo5-sketch/app-educativa-medellin) · [Paneles por rol](https://github.com/luism7p7/numi-paneles-roles)
 
-## Proyectos destacados
+<a href="https://luism7p7.github.io/BlackJack/Casino/public/"><picture><source media="(max-width: 700px)" srcset="assets/m-blackjack.svg"><img src="assets/blackjack.svg" width="100%" alt="BlackJack Royale: casino en el navegador con multijugador y banco de fichas"></picture></a>
 
-| Proyecto | Qué es | Mi parte | Enlaces |
-|---|---|---|---|
-| **Casa Rendón** | Sitio web de una marca de café de altura y vino artesanal de Andes, Antioquia | Desarrollo en equipo | [Sitio en línea](https://casarendon.com) · [Código](https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon) |
-| **Numi** | App Android educativa para niños de zonas rurales, funciona sin internet y tiene 49 actividades y un asistente de IA | Equipo de ingeniería | [Código](https://github.com/geminitodo5-sketch/app-educativa-medellin) |
-| **BlackJack Royale** | Casino web con modo contra la máquina, multijugador en tiempo real y banco de fichas | Individual | [Jugar](https://luism7p7.github.io/BlackJack/Casino/public/) · [Código](https://github.com/luism7p7/BlackJack) |
-| **GlampingHub** | Plataforma para reservar glampings, cabañas y fincas, con servidor en Java y Spring Boot y base de datos MySQL | Individual | [Video](https://luism7p7.github.io/#glampinghub) · [Código](https://github.com/luism7p7/glampinghub) |
-| **Árbol de regresión con Iris** | Modelo de machine learning con error promedio de 0,24 cm y R² de 0,97 | Analítica de Datos | [Ver análisis](https://luism7p7.github.io/#datos) |
+**[Jugar en línea](https://luism7p7.github.io/BlackJack/Casino/public/)** · [Ver el video y los detalles](https://luism7p7.github.io/#blackjack) · [Código](https://github.com/luism7p7/BlackJack)
 
-Mira los videos de cada proyecto en **[luism7p7.github.io](https://luism7p7.github.io)**.
+<a href="https://luism7p7.github.io/#glampinghub"><picture><source media="(max-width: 700px)" srcset="assets/m-glampinghub.svg"><img src="assets/glampinghub.svg" width="100%" alt="GlampingHub: plataforma para reservar glampings, cabañas y fincas, con servidor en Java y Spring Boot"></picture></a>
+
+**[Ver el video y los detalles](https://luism7p7.github.io/#glampinghub)** · [Código](https://github.com/luism7p7/glampinghub)
+
+## Análisis de datos
+
+<a href="https://luism7p7.github.io/#datos"><picture><source media="(max-width: 700px)" srcset="assets/m-datos.svg"><img src="assets/datos.svg" width="100%" alt="Árbol de regresión con el conjunto Iris: 2,4 mm de error promedio y 97 % de la variación explicada"></picture></a>
+
+**[Ver el análisis completo](https://luism7p7.github.io/#datos)**, hecho en Google Colab para la materia de Analítica de Datos.
 
 ## Herramientas
 
-<p>
-  <img src="https://skillicons.dev/icons?i=java,spring,html,css,js,react,python,flutter,dart,mysql,sqlite,firebase,git,github&theme=dark" alt="Herramientas" />
-</p>
+<picture><source media="(max-width: 700px)" srcset="assets/m-herramientas.svg"><img src="assets/herramientas.svg" width="100%" alt="Web: HTML, CSS, JavaScript, React. Back-end: Java, Spring Boot, Maven. Móvil: Flutter, Dart. Datos: Python, pandas, scikit-learn, Colab. Bases de datos: MySQL, SQLite, Firebase. Equipo: Git, GitHub, Scrum. Aprendiendo: AWS y Power BI. Lo siguiente: Docker y JUnit."></picture>
 
-**Aprendiendo ahora:** AWS · Power BI
-**Lo siguiente:** Docker · JUnit
+<a href="mailto:munozrendonluismiguel@gmail.com"><picture><source media="(max-width: 700px)" srcset="assets/m-contacto.svg"><img src="assets/contacto.svg" width="100%" alt="¿Tienes una práctica? Hablemos. munozrendonluismiguel@gmail.com"></picture></a>
 
-## Actividad
-
-<p>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=luism7p7&bg_color=0C1110&color=DCE3DF&line=A8D5BF&point=E3D3B4&area=true&area_color=A8D5BF&hide_border=true&custom_title=Contribuciones%20recientes" alt="Gráfica de contribuciones" />
-</p>
-
-## Contacto
-
-- Correo: munozrendonluismiguel@gmail.com
-- Ubicación: Medellín, Antioquia, Colombia
+<sub>Read it in English: [luism7p7.github.io/#en](https://luism7p7.github.io/#en)</sub>
