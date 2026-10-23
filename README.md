@@ -1,31 +1,32 @@
-<a href="https://luism7p7.github.io"><img src="assets/juego/titulo.svg" width="100%" alt="LUIS MIGUEL MUÑOZ RENDÓN · Ingeniería de Software · Medellín. Presiona start. Semestre 7, meta 2027-01."></a>
+<a href="https://luism7p7.github.io"><img src="assets/pixel/portada.svg" width="100%" alt="Luis Miguel Muñoz Rendón, estudiante de Ingeniería de Software en la Universidad Cooperativa de Colombia. Disponible para práctica profesional desde enero de 2027, presencial, híbrida o remota."></a>
 
 <p align="center">
-  <a href="https://luism7p7.github.io"><img src="assets/juego/btn-start.svg" height="44" alt="Start: portafolio"></a>
-  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/juego/btn-cv.svg" height="44" alt="Hoja de vida"></a>
-  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/juego/btn-linkedin.svg" height="44" alt="LinkedIn"></a>
-  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/juego/btn-correo.svg" height="44" alt="Correo"></a>
+  <a href="https://luism7p7.github.io"><img src="assets/pixel/btn-portafolio.svg" height="42" alt="Ver portafolio"></a>
+  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/pixel/btn-cv.svg" height="42" alt="Hoja de vida (PDF)"></a>
+  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/pixel/btn-linkedin.svg" height="42" alt="LinkedIn"></a>
+  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/pixel/btn-correo.svg" height="42" alt="Correo"></a>
 </p>
 
-<img src="assets/juego/mapa.svg" width="100%" alt="Mapa de niveles: Kiosco 2022, Universidad 2023, GlampingHub 2025, BlackJack, Numi 2026, Casa Rendón 2026, Datos Iris y el castillo final Práctica 2027.">
+Estudiante de Ingeniería de Software (VII semestre) en la Universidad Cooperativa de Colombia, Medellín. Desarrollo back-end con **Java y Spring Boot**, sitios web con **React**, apps con **Flutter** y análisis de datos con **Python**. Busco mi **práctica profesional desde enero de 2027**, en desarrollo de software o datos, presencial, híbrida o remota.
+
+<img src="assets/pixel/trayectoria.svg" width="100%" alt="Trayectoria: 2022 Kiosco Casa Rendón, 2023 Ingeniería de Software, 2025 GlampingHub, BlackJack Royale, 2026 Numi, 2026 Casa Rendón, 2026 Analítica de datos; meta: práctica profesional en 2027.">
 
 <p align="center">
-  <b>Jugar los niveles:</b>
   <a href="https://casarendon.com">Casa Rendón</a> ·
-  <a href="https://luism7p7.github.io/BlackJack/Casino/public/">BlackJack</a> ·
+  <a href="https://luism7p7.github.io/BlackJack/Casino/public/">BlackJack Royale</a> ·
   <a href="https://github.com/luism7p7/glampinghub">GlampingHub</a> ·
   <a href="https://luism7p7.github.io/#numi">Numi</a> ·
-  <a href="https://luism7p7.github.io/#datos">Datos</a>
-  <br><sub>El video de cada nivel está en el <a href="https://luism7p7.github.io">portafolio</a>.</sub>
+  <a href="https://luism7p7.github.io/#datos">Analítica de datos</a>
+  <br><sub>Videos y detalles de cada proyecto en el <a href="https://luism7p7.github.io">portafolio</a>.</sub>
 </p>
 
-<img src="assets/juego/inventario.svg" width="100%" alt="Inventario: Java, Spring Boot, Maven, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, Colab, MySQL, SQLite, Firebase, Git y GitHub. Logros: primer sitio en producción, multijugador en tiempo real, API con Spring Boot, app sin internet y modelo de machine learning. Por desbloquear: JUnit, Docker, AWS y la práctica profesional.">
+<img src="assets/pixel/competencias.svg" width="100%" alt="Competencias: Java, Spring Boot, Maven, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, Colab, MySQL, SQLite, Firebase, Git y GitHub. Hitos: primer sitio en producción, multijugador en tiempo real, API REST con Spring Boot, app sin internet y modelo de machine learning. Próximos objetivos: JUnit, Docker, AWS y práctica profesional en 2027.">
 
-<img src="assets/juego/gusano.svg" width="100%" alt="Minijuego: el gusano se come mis contribuciones">
+<img src="assets/pixel/contribuciones.svg" width="100%" alt="Contribuciones: mi actividad real del último año en GitHub, actualizada cada día.">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano.svg">
-  <img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg" width="100%" alt="Un gusano se come mi gráfico de contribuciones del último año">
+  <img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg" width="100%" alt="Un gusano recorre mi gráfico de contribuciones del último año">
 </picture>
 
-<a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/juego/continuar.svg" width="100%" alt="¿Continuar? Inserta una oferta de práctica: munozrendonluismiguel@gmail.com"></a>
+<a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/pixel/cierre.svg" width="100%" alt="Busco mi práctica profesional desde enero de 2027, en desarrollo de software o datos. munozrendonluismiguel@gmail.com"></a>
