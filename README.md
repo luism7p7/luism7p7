@@ -14,7 +14,7 @@ Estudiante de Ingeniería de Software (VII semestre) en la Universidad Cooperati
 <p align="center">
   <a href="https://casarendon.com">Casa Rendón</a> ·
   <a href="https://luism7p7.github.io/BlackJack/Casino/public/">BlackJack Royale</a> ·
-  <a href="https://github.com/luism7p7/glampinghub">GlampingHub</a> ·
+  <a href="https://glampinghub-mzyu.onrender.com">GlampingHub</a> ·
   <a href="https://luism7p7.github.io/#numi">Numi</a> ·
   <a href="https://luism7p7.github.io/#datos">Analítica de datos</a>
   <br><sub>Videos y detalles de cada proyecto en el <a href="https://luism7p7.github.io">portafolio</a>.</sub>
