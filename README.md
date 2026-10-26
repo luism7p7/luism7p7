@@ -1,32 +1,29 @@
-<a href="https://luism7p7.github.io"><img src="assets/pixel/portada.svg" width="100%" alt="Luis Miguel Muñoz Rendón, estudiante de Ingeniería de Software en la Universidad Cooperativa de Colombia. Disponible para práctica profesional desde enero de 2027, presencial, híbrida o remota."></a>
+<a href="https://luism7p7.github.io"><img src="assets/andes/portada.svg" width="100%" alt="Luis Miguel Muñoz Rendón, estudiante de Ingeniería de Software en Medellín. Mapa de líneas de nivel de los Andes con la ruta de Andes, Antioquia, a Medellín. Disponible para práctica profesional desde noviembre de 2026."></a>
 
 <p align="center">
-  <a href="https://luism7p7.github.io"><img src="assets/pixel/btn-portafolio.svg" height="42" alt="Ver portafolio"></a>
-  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/pixel/btn-cv.svg" height="42" alt="Hoja de vida (PDF)"></a>
-  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/pixel/btn-linkedin.svg" height="42" alt="LinkedIn"></a>
-  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/pixel/btn-correo.svg" height="42" alt="Correo"></a>
+  <a href="https://luism7p7.github.io"><img src="assets/andes/btn-portafolio.svg" height="44" alt="Ver portafolio"></a>
+  <a href="https://luism7p7.github.io/cv/Luis_Miguel_Munoz_Rendon_HV.pdf"><img src="assets/andes/btn-cv.svg" height="44" alt="Hoja de vida (PDF)"></a>
+  <a href="https://www.linkedin.com/in/luismiguelmu%C3%B1ozrendon"><img src="assets/andes/btn-linkedin.svg" height="44" alt="LinkedIn"></a>
+  <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/andes/btn-correo.svg" height="44" alt="Correo"></a>
 </p>
 
-Estudiante de Ingeniería de Software (VII semestre) en la Universidad Cooperativa de Colombia, Medellín. Desarrollo back-end con **Java y Spring Boot**, sitios web con **React**, apps con **Flutter** y análisis de datos con **Python**. Busco mi **práctica profesional desde enero de 2027**, en desarrollo de software o datos, presencial, híbrida o remota.
+Soy de **Andes, Antioquia**, un pueblo cafetero del suroeste, y hoy estudio **Ingeniería de Software** (VII semestre) en la Universidad Cooperativa de Colombia, en Medellín. Antes de programar administré un kiosco atendiendo clientes y proveedores: de ahí me quedó la costumbre de escuchar a las personas y resolver problemas reales. Trabajo el back-end con **Java y Spring Boot**, sitios web con **React**, apps con **Flutter** y análisis de datos con **Python**.
 
-<img src="assets/pixel/trayectoria.svg" width="100%" alt="Trayectoria: 2022 Kiosco Casa Rendón, 2023 Ingeniería de Software, 2025 GlampingHub, BlackJack Royale, 2026 Numi, 2026 Casa Rendón, 2026 Analítica de datos; meta: práctica profesional en 2027.">
+Busco mi **práctica profesional desde noviembre de 2026**, en desarrollo de software o datos, presencial, híbrida o remota.
+
+<img src="assets/andes/trayectoria.svg" width="100%" alt="Trayectoria como perfil de ascenso: 2022 Kiosco Casa Rendón, 2023 Ingeniería de Software, 2025 GlampingHub, 2025 BlackJack Royale en equipo, 2026 Numi, 2026 Casa Rendón, 2026 Analítica de datos; próxima cumbre: práctica profesional desde noviembre de 2026.">
 
 <p align="center">
+  <a href="https://glampinghub-mzyu.onrender.com"><b>GlampingHub</b></a> (pruébala en línea) ·
   <a href="https://casarendon.com">Casa Rendón</a> ·
   <a href="https://luism7p7.github.io/BlackJack/Casino/public/">BlackJack Royale</a> ·
-  <a href="https://glampinghub-mzyu.onrender.com">GlampingHub</a> ·
   <a href="https://luism7p7.github.io/#numi">Numi</a> ·
   <a href="https://luism7p7.github.io/#datos">Analítica de datos</a>
   <br><sub>Videos y detalles de cada proyecto en el <a href="https://luism7p7.github.io">portafolio</a>.</sub>
 </p>
 
-<img src="assets/pixel/competencias.svg" width="100%" alt="Competencias: Java, Spring Boot, Maven, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, Colab, MySQL, SQLite, Firebase, Git y GitHub. Hitos: primer sitio en producción, multijugador en tiempo real, API REST con Spring Boot, app sin internet y modelo de machine learning. Próximos objetivos: JUnit, Docker, AWS y práctica profesional en 2027.">
+<img src="assets/andes/competencias.svg" width="100%" alt="Herramientas: Java, Spring Boot, Maven, JUnit, HTML, CSS, JavaScript, React, Python, pandas, scikit-learn, Colab, Flutter, Dart, MySQL, SQLite, Firebase, Docker, Git y GitHub. Cumbres alcanzadas y próximo tramo: AWS, Power BI y práctica desde noviembre de 2026.">
 
-<img src="assets/pixel/contribuciones.svg" width="100%" alt="Contribuciones: mi actividad real del último año en GitHub, actualizada cada día.">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano.svg">
-  <img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg" width="100%" alt="Un gusano recorre mi gráfico de contribuciones del último año">
-</picture>
+<img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/relieve.svg" width="100%" alt="Relieve de mis contribuciones en GitHub durante el último año: cada cresta es un día de la semana. Se actualiza todos los días.">
 
-<a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/pixel/cierre.svg" width="100%" alt="Busco mi práctica profesional desde enero de 2027, en desarrollo de software o datos. munozrendonluismiguel@gmail.com"></a>
+<a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/andes/cierre.svg" width="100%" alt="Busco mi práctica profesional desde noviembre de 2026, en desarrollo de software o datos. munozrendonluismiguel@gmail.com"></a>
