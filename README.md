@@ -15,6 +15,6 @@
 
 <img src="assets/andes/habilidades.svg" width="100%" alt="Habilidades técnicas: Java, Spring Boot, Maven, JUnit, MySQL, Docker, Git, GitHub, Scrum, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, Colab, SQLite y Firebase. Aprendiendo ahora: AWS y Power BI.">
 
-<img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/contribuciones.svg?v=radar" width="100%" alt="Radar de mis contribuciones en GitHub del último año: un rayo por día alrededor de un círculo y un barrido que enciende cada día al pasar. Se actualiza todos los días.">
+<img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/contribuciones.svg?v=metrocable" width="100%" alt="Mis contribuciones en GitHub del último año: una cabina del metrocable de Medellín cruza la cuadrícula y enciende cada día que programé. Se actualiza todos los días.">
 
 <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/andes/cierre.svg" width="100%" alt="Busco mi práctica profesional desde noviembre de 2026, en desarrollo de software o datos. munozrendonluismiguel@gmail.com"></a>
