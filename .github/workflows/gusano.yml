@@ -1,6 +1,6 @@
-# Genera la vista 3D de mis contribuciones (scripts/contribuciones.py) con datos reales de GitHub
+# Genera el metrocable de mis contribuciones (scripts/contribuciones.py) con datos reales de GitHub
 # y la publica en la rama output. Corre todos los días y cuando cambia este archivo o el script.
-name: contribuciones en 3D
+name: metrocable de contribuciones
 
 on:
   schedule:
