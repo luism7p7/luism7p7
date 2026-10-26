@@ -1,5 +1,6 @@
 # Genera el gusanito que se come el gráfico de contribuciones (datos reales de GitHub)
-# y el relieve de contribuciones. Corre todos los días y cuando cambia este archivo o el script.
+# y el relieve de contribuciones. El relieve va primero porque el gusanito escribe dist/ como root.
+# Corre todos los días y cuando cambia este archivo o el script.
 name: gusanito de contribuciones
 
 on:
@@ -20,6 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Dibujar el relieve
+        run: python3 scripts/relieve.py dist/relieve.svg
+        env:
+          GH_USER: ${{ github.repository_owner }}
+
       - name: Generar el gusanito
         uses: Platane/snk@v3
         with:
@@ -27,11 +33,6 @@ jobs:
           outputs: |
             dist/gusano-dark.svg?color_snake=#E2B04B&color_dots=#132320,#1E3A33,#3E6B5A,#5E8574,#8DB89C
             dist/gusano.svg?color_snake=#B8862B&color_dots=#ebedf0,#c6dccf,#8DB89C,#5E8574,#2F5446
-
-      - name: Dibujar el relieve
-        run: python3 scripts/relieve.py dist/relieve.svg
-        env:
-          GH_USER: ${{ github.repository_owner }}
 
       - name: Publicar en la rama output
         uses: crazy-max/ghaction-github-pages@v5
