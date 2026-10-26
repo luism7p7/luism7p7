@@ -1,6 +1,6 @@
-# Genera el gusano que se come el gráfico de contribuciones (datos reales de GitHub).
-# Corre todos los días y cada vez que se edita este archivo; también se puede lanzar a mano.
-name: gusano de contribuciones
+# Genera el "relieve de contribuciones": el gráfico de contribuciones del último año
+# dibujado como una cordillera (scripts/relieve.py). Corre todos los días y cuando cambia el script.
+name: relieve de contribuciones
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/gusano.yml"]
+    paths: ["scripts/relieve.py", ".github/workflows/gusano.yml"]
 
 permissions:
   contents: write
@@ -18,13 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Generar SVG del gusano
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/gusano.svg?color_snake=#F778BA&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39
-            dist/gusano-dark.svg?color_snake=#F778BA&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
+      - uses: actions/checkout@v4
+
+      - name: Dibujar el relieve
+        run: python3 scripts/relieve.py dist/relieve.svg
+        env:
+          GH_USER: ${{ github.repository_owner }}
 
       - name: Publicar en la rama output
         uses: crazy-max/ghaction-github-pages@v5
