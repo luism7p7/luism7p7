@@ -1,7 +1,6 @@
-# Genera el gusanito que se come el gráfico de contribuciones (datos reales de GitHub)
-# y el relieve de contribuciones. El relieve va primero porque el gusanito escribe dist/ como root.
-# Corre todos los días y cuando cambia este archivo o el script.
-name: gusanito de contribuciones
+# Genera la vista 3D de mis contribuciones (scripts/contribuciones.py) con datos reales de GitHub
+# y la publica en la rama output. Corre todos los días y cuando cambia este archivo o el script.
+name: contribuciones en 3D
 
 on:
   schedule:
@@ -9,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/gusano.yml", "scripts/relieve.py"]
+    paths: [".github/workflows/gusano.yml", "scripts/contribuciones.py"]
 
 permissions:
   contents: write
@@ -21,18 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Dibujar el relieve
-        run: python3 scripts/relieve.py dist/relieve.svg
+      - name: Dibujar las contribuciones en 3D
+        run: python3 scripts/contribuciones.py dist/contribuciones.svg
         env:
           GH_USER: ${{ github.repository_owner }}
-
-      - name: Generar el gusanito
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/gusano-dark.svg?color_snake=#E2B04B&color_dots=#132320,#1E3A33,#3E6B5A,#5E8574,#8DB89C
-            dist/gusano.svg?color_snake=#B8862B&color_dots=#ebedf0,#c6dccf,#8DB89C,#5E8574,#2F5446
 
       - name: Publicar en la rama output
         uses: crazy-max/ghaction-github-pages@v5
