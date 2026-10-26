@@ -1,6 +1,6 @@
-# Genera el "relieve de contribuciones": el gráfico de contribuciones del último año
-# dibujado como una cordillera (scripts/relieve.py). Corre todos los días y cuando cambia el script.
-name: relieve de contribuciones
+# Genera el gusanito que se come el gráfico de contribuciones (datos reales de GitHub)
+# y el relieve de contribuciones. Corre todos los días y cuando cambia este archivo o el script.
+name: gusanito de contribuciones
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["scripts/relieve.py", ".github/workflows/gusano.yml"]
+    paths: [".github/workflows/gusano.yml", "scripts/relieve.py"]
 
 permissions:
   contents: write
@@ -19,6 +19,14 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
+      - name: Generar el gusanito
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/gusano-dark.svg?color_snake=#E2B04B&color_dots=#132320,#1E3A33,#3E6B5A,#5E8574,#8DB89C
+            dist/gusano.svg?color_snake=#B8862B&color_dots=#ebedf0,#c6dccf,#8DB89C,#5E8574,#2F5446
 
       - name: Dibujar el relieve
         run: python3 scripts/relieve.py dist/relieve.svg
