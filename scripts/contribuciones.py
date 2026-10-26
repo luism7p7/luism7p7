@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Radar de contribuciones: el último año da una vuelta completa alrededor de un círculo, con un
-rayo por día cuyo largo es el número de contribuciones. Un barrido gira sin parar y enciende
-cada día al pasar; el día récord late en dorado. Con el estilo "Mapa de los Andes".
-Lo ejecuta .github/workflows/gusano.yml todos los días. Solo usa la biblioteca estándar."""
+"""Metrocable de contribuciones: una cabina del metrocable de Medellín cruza el gráfico de
+contribuciones del último año y enciende cada día que programé; otra cabina va de regreso.
+Con el estilo "Mapa de los Andes". Lo ejecuta .github/workflows/gusano.yml todos los días.
+Solo usa la biblioteca estándar."""
 import base64, datetime as dt, html, math, os, re, sys, urllib.request
 
 USER = os.environ.get('GH_USER', 'luism7p7')
@@ -53,114 +53,119 @@ def odometro(x, y, valor, size, delay, uid):
     return f'<clipPath id="oc{uid}"><rect x="{x-4}" y="{y-size*.8:.0f}" width="{cx-x+30:.0f}" height="{size*1.02:.0f}"/></clipPath><g clip-path="url(#oc{uid})">{"".join(o)}</g>'
 
 def svg(dias):
-    W, H = 1200, 520
+    W, H = 1200, 360
     fechas = sorted(dias)
-    hoy = dt.date.fromisoformat(fechas[-1])
-    N = len(fechas)
     n = lambda f: dias.get(f, (0, 0))[0]
-    total = sum(v[0] for v in dias.values())
-    activos = sum(1 for v in dias.values() if v[0] > 0)
-    mejor = max(fechas, key=n); nmax = max(1, n(mejor))
+    hoy = dt.date.fromisoformat(fechas[-1])
+    total = sum(n(f) for f in fechas); activos = sum(1 for f in fechas if n(f))
+    mejor = max(fechas, key=n)
     racha = larga = 0
     for f in fechas:
-        racha = racha + 1 if n(f) > 0 else 0; larga = max(larga, racha)
-    actual = 0
-    for f in reversed(fechas):
-        if n(f) > 0: actual += 1
-        elif f == fechas[-1]: continue
-        else: break
-    # radar: el año da una vuelta completa en el sentido del reloj, empezando arriba
-    cx, cy, r0, r1 = 790, 262, 82, 206
-    VUELTA = 8.0  # segundos por vuelta del barrido
-    ang = lambda i: -math.pi / 2 + 2 * math.pi * i / N
-    pol = lambda a, r: (cx + r * math.cos(a), cy + r * math.sin(a))
-    o = [f'<rect width="{W}" height="{H}" fill="{C["bg"]}"/>']
-    o.append(f'<defs><radialGradient id="gw" cx="{cx/W:.3f}" cy=".5" r=".42"><stop offset="0" stop-color="#173A30" stop-opacity=".95"/><stop offset="1" stop-color="{C["bg"]}" stop-opacity="0"/></radialGradient>'
-             f'<linearGradient id="sw" x1="0" x2="1"><stop offset="0" stop-color="#F0CB7A" stop-opacity="0"/><stop offset=".5" stop-color="#F0CB7A" stop-opacity=".05"/><stop offset="1" stop-color="#F0CB7A" stop-opacity="0"/></linearGradient>'
-             f'<clipPath id="cl"><rect width="{W}" height="{H}" rx="18"/></clipPath></defs><rect width="{W}" height="{H}" fill="url(#gw)"/>')
-    # anillos guía
-    for k, r in enumerate([r0, (r0 + r1) / 2, r1]):
-        o.append(f'<circle cx="{cx}" cy="{cy}" r="{r:.0f}" fill="none" stroke="{C["line"]}" stroke-width="{1.5 if k != 1 else 1}" stroke-dasharray="{"none" if k != 1 else "2 6"}" class="f"/>')
-    o.append(f'<circle cx="{cx}" cy="{cy}" r="{r1+14}" fill="none" stroke="{C["line"]}" stroke-width="1" pathLength="100" stroke-dasharray="1 2" class="spin"/>')
-    # barrido que gira (cuña con degradado hecha de franjas)
-    cuña = []
-    for k in range(18):
-        a0 = -math.pi / 2 - k * math.radians(2.2); a1 = a0 - math.radians(2.3)
-        p0, p1, q0, q1 = pol(a0, r0 - 6), pol(a0, r1 + 8), pol(a1, r1 + 8), pol(a1, r0 - 6)
-        cuña.append(f'<path d="M{p0[0]:.1f} {p0[1]:.1f}L{p1[0]:.1f} {p1[1]:.1f}A{r1+8} {r1+8} 0 0 0 {q0[0]:.1f} {q0[1]:.1f}L{q1[0]:.1f} {q1[1]:.1f}A{r0-6} {r0-6} 0 0 1 {p0[0]:.1f} {p0[1]:.1f}Z" fill="{C["gold2"]}" opacity="{.20*(1-k/18)**1.6:.3f}"/>')
-    e = pol(-math.pi / 2, r1 + 8)
-    o.append(f'<g class="sweep">{"".join(cuña)}<line x1="{cx}" y1="{cy - r0 + 6}" x2="{e[0]:.1f}" y2="{e[1]:.1f}" stroke="{C["gold2"]}" stroke-width="2" opacity=".85"/></g>')
-    # un rayo por día
-    rayos = []
-    for i, f in enumerate(fechas):
-        c, lvl = dias[f]
-        a = ang(i + .5)
-        dl = i / N * VUELTA
-        if c == 0:
-            p, q = pol(a, r0 + 2), pol(a, r0 + 7)
-            rayos.append(f'<line x1="{p[0]:.1f}" y1="{p[1]:.1f}" x2="{q[0]:.1f}" y2="{q[1]:.1f}" stroke="#1E3A33" stroke-width="1.6"/>')
-            continue
-        L = 14 + (r1 - r0 - 14) * math.log1p(c) / math.log1p(nmax)
-        p, q = pol(a, r0 + 2), pol(a, r0 + 2 + L)
-        col = C['gold'] if f == mejor else ['#3E6B5A', '#5E8574', '#8DB89C', '#A9D3B6'][min(lvl, 4) - 1 if lvl else 0]
-        rayos.append(f'<g class="grow" style="animation-delay:{.3 + i/N*1.6:.2f}s"><line x1="{p[0]:.1f}" y1="{p[1]:.1f}" x2="{q[0]:.1f}" y2="{q[1]:.1f}" stroke="{col}" stroke-width="3.2" stroke-linecap="round"/>'
-                     f'<line class="hit" x1="{p[0]:.1f}" y1="{p[1]:.1f}" x2="{q[0]:.1f}" y2="{q[1]:.1f}" stroke="#FFF1CF" stroke-width="3.2" stroke-linecap="round" style="animation-delay:{dl:.2f}s"/>'
-                     f'<circle class="hit" cx="{q[0]:.1f}" cy="{q[1]:.1f}" r="3.2" fill="#FFF1CF" style="animation-delay:{dl:.2f}s"/></g>')
-    o.append(''.join(rayos))
-    # meses alrededor
+        racha = racha + 1 if n(f) else 0; larga = max(larga, racha)
+    ini = dt.date.fromisoformat(fechas[0]); ini_dom = ini - dt.timedelta(days=(ini.weekday() + 1) % 7)
+    sem = (hoy - ini_dom).days // 7 + 1
+    cs, gp = 13.4, 3.6
+    x0 = (W - sem * (cs + gp)) / 2 + 10; y0 = 214
+    col = ['#14261F', '#2F5446', '#4F7A66', '#8DB89C', '#C9E3CF']
+    DUR = 11.0
+    o = []
+    # montañas al fondo con luces de la ciudad
+    o.append(f'<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1312"/><stop offset="1" stop-color="#10241F"/></linearGradient>'
+             f'<linearGradient id="cono" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0CB7A" stop-opacity=".22"/><stop offset="1" stop-color="#F0CB7A" stop-opacity="0"/></linearGradient></defs>'
+             f'<rect width="{W}" height="{H}" fill="url(#sky)"/>')
+    far = ' '.join(f'{x},{150 - 30*math.sin(x/170+1.4) - 12*math.sin(x/53)}' for x in range(0, W + 20, 20))
+    near = ' '.join(f'{x},{176 - 34*math.sin(x/140+.6) - 14*math.sin(x/47)}' for x in range(0, W + 20, 20))
+    o.append(f'<polygon points="0,{H} {far} {W},{H}" fill="#0E1D1A"/><polygon points="0,{H} {near} {W},{H}" fill="#11241F"/>')
+    rnd = 7
+    for k in range(70):
+        rnd = (rnd * 16807) % 2147483647; x = rnd % W
+        rnd = (rnd * 16807) % 2147483647; yy = 176 - 34 * math.sin(x / 140 + .6) - 14 * math.sin(x / 47) + 6 + rnd % 26
+        rnd = (rnd * 16807) % 2147483647
+        o.append(f'<circle cx="{x}" cy="{yy:.0f}" r="1.1" fill="#F0CB7A" class="luz" style="animation-delay:-{rnd % 40 / 10:.1f}s"/>')
+    for k in range(46):
+        rnd = (rnd * 16807) % 2147483647; sx_ = rnd % W
+        rnd = (rnd * 16807) % 2147483647; sy_ = 90 + rnd % 50
+        rnd = (rnd * 16807) % 2147483647
+        o.append(f'<circle cx="{sx_}" cy="{sy_}" r="{.5 + (rnd % 10)/14:.1f}" fill="#C9D6CF" class="luz" style="animation-delay:-{rnd % 30 / 10:.1f}s;animation-duration:{1.6 + rnd % 20 / 10:.1f}s"/>')
+    for k, (cy_, rx_, dur_, op_) in enumerate([(150, 160, 46, .05), (176, 220, 64, .045), (132, 120, 38, .04)]):
+        o.append(f'<ellipse cx="0" cy="{cy_}" rx="{rx_}" ry="{rx_*.12:.0f}" fill="#C9E3CF" opacity="{op_}" class="nube" style="animation-duration:{dur_}s;animation-delay:-{k*15}s"/>')
+    # cabecera con cifras
+    o.append(T(48, 56, 'MIS CONTRIBUCIONES', 12.5, C['gold'], 'b f', extra=' letter-spacing="2.4"'))
+    o.append(T(48, 78, f'Mi metrocable recorre el último año · se actualiza cada día ({hoy.day} {MESES[hoy.month-1]})', 13, C['mut'], 'f'))
+    x = W - 48
+    for v, t in reversed([(total, 'contribuciones'), (activos, 'días activos'), (larga, 'días de racha'), (n(mejor), 'en mi mejor día')]):
+        w = len(str(v)) * 13 + len(t) * 6.6 + 34
+        x -= w
+        o.append(f'<g class="f"><rect x="{x:.0f}" y="38" width="{w:.0f}" height="32" rx="16" fill="{C["panel"]}" stroke="{C["line"]}" stroke-width="1.5"/>'
+                 + odometro(x + 14, 61, v, 19, .3 + (x % 7) * .08, f'k{len(o)}') + T(x + 20 + len(str(v)) * 11.5, 59, t, 12, C['mut'], 'md') + '</g>')
+        x -= 10
+    # torres y cable (catenaria)
+    xa, xb = x0 - 26, x0 + sem * (cs + gp) + 16
+    torres = [xa, (xa + xb) / 2, xb]; top = 118
+    ida = f'M{torres[0]:.0f} {top} Q{(torres[0]+torres[1])/2:.0f} {top+40} {torres[1]:.0f} {top} Q{(torres[1]+torres[2])/2:.0f} {top+40} {torres[2]:.0f} {top}'
+    vuelta = f'M{torres[2]:.0f} {top-8} Q{(torres[1]+torres[2])/2:.0f} {top+32} {torres[1]:.0f} {top-8} Q{(torres[0]+torres[1])/2:.0f} {top+32} {torres[0]:.0f} {top-8}'
+    for tx in torres:
+        o.append(f'<path d="M{tx-8:.0f} {y0-10}L{tx-2:.0f} {top-10}M{tx+8:.0f} {y0-10}L{tx+2:.0f} {top-10}M{tx-6:.0f} {y0-50}L{tx+6:.0f} {y0-50}M{tx-4:.0f} {y0-80}L{tx+4:.0f} {y0-80}" fill="none" stroke="#2F5446" stroke-width="2.4" stroke-linecap="round"/>'
+                 f'<rect x="{tx-14:.0f}" y="{top-14}" width="28" height="6" rx="3" fill="#4F7A66"/><circle cx="{tx:.0f}" cy="{top-17}" r="2.4" fill="#D98B6A" class="luz"/>')
+    o.append(f'<path d="{ida}" fill="none" stroke="{C["mut"]}" stroke-width="1.4" opacity=".9"/><path d="{vuelta}" fill="none" stroke="{C["mut"]}" stroke-width="1.1" opacity=".45"/>'
+             f'<path d="{ida}" fill="none" stroke="{C["gold2"]}" stroke-width="2" pathLength="100" stroke-dasharray="4 96" class="cb"/>')
+    def cabina(path, dur, delay, principal):
+        c1 = C['gold'] if principal else '#4F7A66'
+        cono = f'<path d="M-16 44L16 44L46 {y0 + 7*(cs+gp) - top - 4}L-46 {y0 + 7*(cs+gp) - top - 4}Z" fill="url(#cono)"/>' if principal else ''
+        return (f'<g opacity="{1 if principal else .75}"><animateMotion dur="{dur}s" begin="{delay}s" repeatCount="indefinite" path="{path}"/>'
+                f'{cono}<g class="sway"><line x1="0" y1="0" x2="0" y2="14" stroke="{C["mut"]}" stroke-width="1.6"/><rect x="-6" y="-3" width="12" height="5" rx="2" fill="{C["mut"]}"/>'
+                f'<rect x="-17" y="14" width="34" height="28" rx="8" fill="{c1}"/><rect x="-17" y="34" width="34" height="8" rx="4" fill="#000" opacity=".18"/>'
+                f'<rect x="-12" y="19" width="10" height="10" rx="2.5" fill="#0C1615" opacity=".8"/><rect x="2" y="19" width="10" height="10" rx="2.5" fill="#0C1615" opacity=".8"/>'
+                + (f'<rect x="-12" y="19" width="10" height="10" rx="2.5" fill="#F0CB7A" class="ven"/><rect x="2" y="19" width="10" height="10" rx="2.5" fill="#F0CB7A" class="ven" style="animation-delay:.7s"/>' if principal else '')
+                + '</g>' + (''.join(f'<circle cx="{dx}" cy="46" r="1.8" fill="#FFE7A8" class="chispa" style="animation-delay:{dl}s"/>' for dx, dl in [(-8, 0), (4, .35), (10, .7), (-2, 1.05), (-12, 1.4)]) if principal else '') + '</g>')
+    # cuadrícula de días
+    for w in range(sem):
+        f0 = ini_dom + dt.timedelta(days=w * 7)
+        for d in range(7):
+            f = (f0 + dt.timedelta(days=d)).isoformat()
+            if f not in dias: continue
+            c, lvl = dias[f]; xx, yy = x0 + w * (cs + gp), y0 + d * (cs + gp)
+            fill = C['gold'] if f == mejor and c else col[min(lvl, 4) if c else 0]
+            o.append(f'<rect class="pop" x="{xx:.1f}" y="{yy:.1f}" width="{cs}" height="{cs}" rx="3.5" fill="{fill}" style="animation-delay:{.2 + w*.015 + d*.02:.2f}s"/>')
+            if c:
+                t0 = (xx + cs / 2 - torres[0]) / (torres[2] - torres[0]) * DUR
+                base = o.pop()
+                o.append(f'<g class="jp" style="animation-delay:{t0 + 1.0:.2f}s">{base}<rect class="wv" x="{xx:.1f}" y="{yy:.1f}" width="{cs}" height="{cs}" rx="3.5" fill="#FFF1CF" style="animation-delay:{t0 + 1.0:.2f}s"/></g>')
+            if f == mejor and c:
+                o.append(f'<rect x="{xx:.1f}" y="{yy:.1f}" width="{cs}" height="{cs}" rx="3.5" fill="none" stroke="{C["gold"]}" stroke-width="2" class="pk"/>')
     mprev = None
-    for i, f in enumerate(fechas):
-        fd = dt.date.fromisoformat(f)
-        if fd.month != mprev and fd.day == 1:
-            a = ang(i); p = pol(a, r1 + 30); t1, t2 = pol(a, r1 + 4), pol(a, r1 + 12)
-            o.append(f'<line x1="{t1[0]:.1f}" y1="{t1[1]:.1f}" x2="{t2[0]:.1f}" y2="{t2[1]:.1f}" stroke="{C["dim"]}" stroke-width="1"/>')
-            o.append(T(p[0], p[1] + 4, MESES[fd.month - 1], 11, C['dim'], 'm f', 'middle'))
-            mprev = fd.month
-    # día récord y hoy
-    im = fechas.index(mejor)
-    if n(mejor):
-        a = ang(im + .5)
-        L = r1 - r0 - 12
-        q = pol(a, r0 + 2 + L)
-        fd = dt.date.fromisoformat(mejor)
-        o.append(f'<circle cx="{q[0]:.1f}" cy="{q[1]:.1f}" r="5" fill="{C["gold"]}"/><circle cx="{q[0]:.1f}" cy="{q[1]:.1f}" r="5" fill="none" stroke="{C["gold"]}" class="pk"/>')
-    # centro: total que gira como odómetro
-    o.append(f'<circle cx="{cx}" cy="{cy}" r="{r0-8}" fill="{C["panel"]}" stroke="{C["line"]}" stroke-width="1.5"/>')
-    o.append(f'<circle cx="{cx}" cy="{cy}" r="{r0-8}" fill="none" stroke="{C["gold"]}" stroke-width="1.5" pathLength="100" stroke-dasharray="12 88" class="tr"/>')
-    tw = len(str(total)) * 40 * .6
-    o.append(odometro(cx - tw / 2, cy + 12, total, 40, .5, 'c'))
-    o.append(T(cx, cy + 34, 'contribuciones', 11.5, C['mut'], 'md', 'middle'))
-    # columna de cifras
-    o.append(T(48, 62, 'MIS CONTRIBUCIONES', 12.5, C['gold'], 'b f', extra=' letter-spacing="2.4"'))
-    o.append(T(48, 84, 'Último año en GitHub · un rayo por día', 13.5, C['mut'], 'f'))
-    stats = [(activos, 'días con actividad'), (larga, 'días de racha más larga'), (actual, 'días de racha actual'), (n(mejor), f'en mi mejor día · {dt.date.fromisoformat(mejor).day} {MESES[dt.date.fromisoformat(mejor).month-1]}')]
-    for i, (v, t) in enumerate(stats):
-        y = 120 + i * 92; dl = .3 + i * .2
-        o.append(f'<g class="f" style="animation-delay:{dl:.2f}s"><rect x="48" y="{y}" width="300" height="78" rx="12" fill="{C["panel"]}" stroke="{C["line"]}" stroke-width="1.5"/>'
-                 f'<rect x="48" y="{y}" width="300" height="78" rx="12" fill="none" stroke="{C["gold"]}" stroke-width="1.6" pathLength="100" stroke-dasharray="14 86" class="tr" style="animation-delay:-{i*1.4:.1f}s"/>'
-                 + odometro(68, y + 50, v, 36, dl + .2, i) + T(68 + len(str(v)) * 21.6 + 12, y + 47, t, 13, C['ivory'], 'md') + '</g>')
-    o.append(f'<rect class="sc" x="0" y="0" width="240" height="{H}" fill="url(#sw)"/>')
-    o.append(T(W - 40, 40, f'Se actualiza cada día · {hoy.day} {MESES[hoy.month-1]} {hoy.year}', 10.5, C['dim'], 'm f', 'end'))
-    css = (f'.sweep{{transform-origin:{cx}px {cy}px;animation:sweep {VUELTA}s linear infinite}}@keyframes sweep{{to{{transform:rotate(360deg)}}}}'
-           f'.spin{{transform-origin:{cx}px {cy}px;animation:sweep 40s linear infinite reverse}}'
-           f'.hit{{opacity:0;animation:hit {VUELTA}s linear infinite}}@keyframes hit{{0%{{opacity:.95}}14%{{opacity:0}}100%{{opacity:0}}}}'
-           f'.grow{{transform-origin:{cx}px {cy}px;animation:grow 1.1s cubic-bezier(.2,.9,.3,1.2) both}}@keyframes grow{{from{{transform:scale(.38);opacity:0}}}}'
-           '.f{animation:f 1.2s ease both}@keyframes f{from{opacity:0}}'
+    for w in range(sem):
+        f0 = ini_dom + dt.timedelta(days=w * 7)
+        if f0.month != mprev and f0.day <= 7:
+            o.append(T(x0 + w * (cs + gp), y0 + 7 * (cs + gp) + 16, MESES[f0.month - 1], 10.5, C['dim'], 'm f')); mprev = f0.month
+    for d, t in [(1, 'lun'), (3, 'mié'), (5, 'vie')]:
+        o.append(T(x0 - 10, y0 + d * (cs + gp) + 10, t, 10, C['dim'], 'm f', 'end'))
+    o.append(cabina(vuelta, DUR * 1.15, 0, False))
+    o.append(cabina(ida, DUR, 1.0, True))
+    css = (f'.wv{{opacity:0;animation:wv {DUR}s linear infinite}}@keyframes wv{{0%{{opacity:.9}}12%{{opacity:0}}100%{{opacity:0}}}}'
+           f'.jp{{animation:jp {DUR}s cubic-bezier(.3,1.6,.5,1) infinite}}@keyframes jp{{0%{{transform:translateY(-7px)}}4%,100%{{transform:none}}}}'
+           f'.cb{{animation:cb {DUR}s linear 1s infinite}}@keyframes cb{{from{{stroke-dashoffset:4}}to{{stroke-dashoffset:-96}}}}'
+           '.chispa{opacity:0;animation:chispa 1.75s ease-in infinite}@keyframes chispa{0%{opacity:0;transform:translateY(0)}15%{opacity:1}100%{opacity:0;transform:translateY(60px)}}'
+           '.ven{opacity:0;animation:ven 1.4s ease-in-out infinite alternate}@keyframes ven{to{opacity:.55}}'
+           f'.nube{{animation:nube 50s linear infinite}}@keyframes nube{{from{{transform:translateX(-260px)}}to{{transform:translateX({W+260}px)}}}}'
            '.od{animation:od 10s cubic-bezier(.2,.8,.2,1) infinite both}@keyframes od{0%{transform:translateY(0);opacity:0}3%{opacity:1}22%{transform:translateY(var(--t))}94%{transform:translateY(var(--t));opacity:1}100%{transform:translateY(var(--t));opacity:0}}'
-           '.tr{animation:tr 6s linear infinite}@keyframes tr{to{stroke-dashoffset:-100}}'
-           '.pk{transform-box:fill-box;transform-origin:center;animation:pk 2.4s ease-out infinite}@keyframes pk{from{transform:scale(.4);opacity:.9}to{transform:scale(3);opacity:0}}'
-           '.sc{animation:sc 9s ease-in-out 3s infinite}@keyframes sc{0%{transform:translateX(-260px)}55%,100%{transform:translateX(1460px)}}'
+           '.pop{transform-box:fill-box;transform-origin:center;animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}@keyframes pop{from{transform:scale(0)}}'
+           '.sway{animation:sway 2.6s ease-in-out infinite alternate}@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}'
+           '.luz{animation:luz 2.4s ease-in-out infinite alternate}@keyframes luz{from{opacity:.2}to{opacity:1}}'
+           '.f{animation:f 1.2s ease both}@keyframes f{from{opacity:0}}'
+           '.pk{transform-box:fill-box;transform-origin:center;animation:pk 2.4s ease-out infinite}@keyframes pk{from{transform:scale(.6);opacity:.9}to{transform:scale(2.6);opacity:0}}'
            '@media (prefers-reduced-motion:reduce){*{animation:none!important}}')
     ff = ''
     for fam, file, extra in [('Fr', 'fr6.woff2', 'font-weight:600;'), ('In', 'i5.woff2', 'font-weight:500;'), ('In', 'i4.woff2', 'font-weight:400;'), ('Mo', 'm4.woff2', '')]:
         b = fuente(file)
         if b: ff += f"@font-face{{font-family:{fam};{extra}src:url(data:font/woff2;base64,{b}) format('woff2')}}"
     style = (ff + 'text{font-family:In,"Segoe UI",system-ui,sans-serif;white-space:pre}.s{font-family:Fr,Georgia,serif;font-weight:600}'
-             '.m{font-family:Mo,ui-monospace,monospace}.b{font-weight:500}.md{font-weight:500}' + css)
-    label = (f'Radar de mis contribuciones en GitHub durante el último año: un rayo por día alrededor de un círculo. {total} contribuciones, '
-             f'{activos} días con actividad, racha más larga de {larga} días, racha actual de {actual} días y {n(mejor)} contribuciones en mi mejor día.')
+             '.m{font-family:Mo,ui-monospace,monospace}.b,.md{font-weight:500}' + css)
+    label = (f'Mis contribuciones en GitHub del último año: una cabina del metrocable de Medellín cruza la cuadrícula y enciende cada día que programé. '
+             f'{total} contribuciones, {activos} días activos, racha de {larga} días y {n(mejor)} contribuciones en mi mejor día.')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{html.escape(label)}">'
-            f'<title>{html.escape(label)}</title><style>{style}</style><g clip-path="url(#cl)">{"".join(o)}</g>'
+            f'<title>{html.escape(label)}</title><style>{style}</style><defs><clipPath id="cl"><rect width="{W}" height="{H}" rx="18"/></clipPath></defs>'
+            f'<g clip-path="url(#cl)">{"".join(o)}</g>'
             f'<rect x=".75" y=".75" width="{W-1.5}" height="{H-1.5}" rx="18" fill="none" stroke="{C["line"]}" stroke-width="1.5"/></svg>')
 
 if __name__ == '__main__':
