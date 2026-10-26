@@ -15,12 +15,6 @@
 
 <img src="assets/andes/habilidades.svg" width="100%" alt="Habilidades técnicas: Java, Spring Boot, Maven, JUnit, MySQL, Docker, Git, GitHub, Scrum, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, Colab, SQLite y Firebase. Aprendiendo ahora: AWS y Power BI.">
 
-<img src="assets/andes/titulo-actividad.svg" width="100%" alt="Actividad en GitHub: mi gusanito recorre mis contribuciones del último año.">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano.svg">
-  <img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/gusano-dark.svg" width="100%" alt="Un gusanito dorado se come mi gráfico de contribuciones del último año.">
-</picture>
+<img src="https://raw.githubusercontent.com/luism7p7/luism7p7/output/contribuciones.svg" width="100%" alt="Mis contribuciones en GitHub del último año en 3D: cada día es un bloque y su altura es el número de contribuciones. Se actualiza todos los días.">
 
 <a href="mailto:munozrendonluismiguel@gmail.com"><img src="assets/andes/cierre.svg" width="100%" alt="Busco mi práctica profesional desde noviembre de 2026, en desarrollo de software o datos. munozrendonluismiguel@gmail.com"></a>
