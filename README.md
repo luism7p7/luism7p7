@@ -11,7 +11,9 @@
 
 <img src="assets/andes/experiencia.svg" width="100%" alt="Experiencia y formación. Experiencia laboral: Administrador y atención al cliente en Kiosco Casa Rendón, de febrero de 2022 a julio de 2023. Formación: Bachillerato Académico (2009 a 2020), Ingeniería de Software en la Universidad Cooperativa de Colombia (VII semestre), curso de Programación en Java en Udemy, Analítica de datos (2026) y práctica profesional desde noviembre de 2026.">
 
-<a href="https://luism7p7.github.io/#proyectos"><img src="assets/andes/proyectos.svg" width="100%" alt="Experiencia en proyectos: GlampingHub (individual, 2025), Casa Rendón (equipo, 2026), Numi (equipo, 2026) y BlackJack Royale (equipo)."></a>
+<a href="https://luism7p7.github.io/#proyectos"><img src="assets/andes/proyectos.svg?v=estados" width="100%" alt="Experiencia en proyectos, estado a noviembre de 2026: GlampingHub (individual, 2025, en línea), Casa Rendón (equipo, 2026, en línea), Numi con sus paneles de roles (equipo, 2026, en reconstrucción), BlackJack Royale (equipo, terminado), VIPY (equipo, 2026, anteproyecto en documentación) y Laboratorios IoT de Computación Ubicua (terminado)."></a>
+
+<p align="center"><a href="https://github.com/luism7p7/glampinghub">GlampingHub</a> · <a href="https://casarendon.com">Casa Rendón</a> · <a href="https://github.com/luism7p7/numi-paneles-roles">Numi · paneles</a> · <a href="https://github.com/luism7p7/BlackJack">BlackJack</a> · <a href="https://github.com/luism7p7/vipy-anteproyecto">VIPY</a> · <a href="https://github.com/luism7p7/laboratorios-computacion-ubicua">Laboratorios IoT</a></p>
 
 <img src="assets/andes/habilidades.svg" width="100%" alt="Habilidades técnicas: Java, Spring Boot, Maven, JUnit, MySQL, Docker, Git, GitHub, Scrum, HTML, CSS, JavaScript, React, Flutter, Dart, Python, pandas, scikit-learn, Colab, SQLite y Firebase. Aprendiendo ahora: AWS y Power BI.">
 
